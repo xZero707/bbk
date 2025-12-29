@@ -35,10 +35,22 @@ For more information, see "Platform Notes" below.
 
 # How to run the CLI client
 
-To perform a mesurement, simply run the executable program that was built using
-the above steps. For more information, run it with the --help argument or read
+To perform a measurement, simply run the executable program that was built using
+the above steps or use one of our prebuilt lightweight docker images. For more information, run it with the --help argument or read
 
    https://frontend.bredbandskollen.se/download/README.txt
+
+## Run with docker
+
+### To print help statement:
+    docker run --init --rm -it ghcr.io/dotse/bbk:1.2.2 --help
+
+### Run measurement:
+    docker run --init --rm --net=host -it ghcr.io/dotse/bbk:1.2.2
+
+Alternatively, you can use bridge network, but measurement might be inaccurate due to bridge / NAT overhead:
+
+    docker run --init --rm -it ghcr.io/dotse/bbk:1.2.2
 
 # About the source code
 
